@@ -2,19 +2,41 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPencil, 
     faEraser, 
     faDroplet, 
-    faDeleteLeft, 
+    faDeleteLeft,
+    faEyeDropper,
     faFloppyDisk} from '@fortawesome/free-solid-svg-icons'
 
 export default function ButtonsTools(props) {
-    const {handleDrawToggle, handleEraseToggle} = props
+    const {handleDrawToggle, handleEraseToggle, handleDropToggle, isDrawing} = props
 
     return (
         <div className="buttons-tools">
-            <button><FontAwesomeIcon icon={faPencil} onClick={handleDrawToggle}/> Pencil</button>
-            <button><FontAwesomeIcon icon={faEraser} onClick={handleEraseToggle}/> Eraser</button>
+            <button onClick={handleDrawToggle}
+            style={{
+                borderColor: isDrawing === 1 && '#646cff',
+                borderWidth: isDrawing === 1 ? '2px' : 'initial',
+            }}>
+                <FontAwesomeIcon icon={faPencil}/> Pencil
+            </button>
+            
+            <button onClick={handleEraseToggle} 
+            style={{
+                borderColor: isDrawing === 2 && '#646cff',
+                borderWidth: isDrawing === 2 ? '2px' : 'initial',
+              }}>
+                <FontAwesomeIcon icon={faEraser}/> Eraser
+            </button>
+
+            <button onClick={handleDropToggle}
+                style={{
+                    borderColor: isDrawing === 3 && '#646cff',
+                    borderWidth: isDrawing === 3 ? '2px' : 'initial',
+            }}>
+                <FontAwesomeIcon icon={faEyeDropper}/> Eyedropper
+            </button>
             
             <div className='config-buttons'>
-                <button><FontAwesomeIcon icon={faDeleteLeft} /> Clear</button>
+                
                 <button><FontAwesomeIcon icon={faFloppyDisk} /> Save</button>
             </div>
         </div>
@@ -22,3 +44,5 @@ export default function ButtonsTools(props) {
 }
 
 //<button><FontAwesomeIcon icon={faDroplet} /> Fill</button>
+//<button><FontAwesomeIcon icon={faDeleteLeft} /> Clear</button>
+//border-color: #646cff

@@ -1,13 +1,13 @@
 import {ChromePicker} from 'react-color'
 
 export default function ColorSelector (props) {
-    const {currentColor, setColor} = props;
+    const {currentColor, updateCurrentColor} = props;
     
     return (
         <>
             <ChromePicker
             color={currentColor}
-            onChangeComplete={updatedColor => setColor(updatedColor.hex)}
+            onChangeComplete={updatedColor => updateCurrentColor(updatedColor.hex)}
             />
         </>
     )
