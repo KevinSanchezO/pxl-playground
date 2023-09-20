@@ -7,7 +7,7 @@ export default function ColorSelector (props) {
         <>
             <ChromePicker
             color={currentColor}
-            onChangeComplete={updatedColor => setColor(updatedColor)}
+            onChangeComplete={updatedColor => setColor(updatedColor.hex)}
             />
         </>
     )

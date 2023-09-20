@@ -5,12 +5,14 @@ import { faPencil,
     faDeleteLeft, 
     faFloppyDisk} from '@fortawesome/free-solid-svg-icons'
 
-export default function ButtonsTools() {
+export default function ButtonsTools(props) {
+    const {handleDrawToggle, handleEraseToggle} = props
+
     return (
         <div className="buttons-tools">
-            <button><FontAwesomeIcon icon={faPencil} /> Pencil</button>
-            <button><FontAwesomeIcon icon={faEraser} /> Eraser</button>
-            <button><FontAwesomeIcon icon={faDroplet} /> Fill</button>
+            <button><FontAwesomeIcon icon={faPencil} onClick={handleDrawToggle}/> Pencil</button>
+            <button><FontAwesomeIcon icon={faEraser} onClick={handleEraseToggle}/> Eraser</button>
+            
             <div className='config-buttons'>
                 <button><FontAwesomeIcon icon={faDeleteLeft} /> Clear</button>
                 <button><FontAwesomeIcon icon={faFloppyDisk} /> Save</button>
@@ -18,3 +20,5 @@ export default function ButtonsTools() {
         </div>
     )
 }
+
+//<button><FontAwesomeIcon icon={faDroplet} /> Fill</button>

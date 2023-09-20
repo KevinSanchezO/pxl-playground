@@ -7,3 +7,18 @@
 .header-github {
   text-align: center;
 }
+
+.canvas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20px, 1fr));
+}
+
+.pixel {
+  width: 20px; /* Adjust the size of the pixels as needed */
+  height: 20px; /* Adjust the size of the pixels as needed */
+  border: 1px solid #ccc; /* Add a border to distinguish pixels */
+}
+
+.pixel:hover {
+  cursor: pointer; /* Change cursor to pointer on hover for better interaction */
+}
