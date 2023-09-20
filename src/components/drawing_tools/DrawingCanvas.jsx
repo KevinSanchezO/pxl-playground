@@ -6,11 +6,13 @@ export default function DrawingCanvas(props) {
     const [pixels, setPixels] = useState(Array.from({length: dimension}, ()=>Array(dimension).fill('white')));
 
     const handlePixelClick = (row, col) => {
-        if (isDrawing) {
-            const updatedPixels = [...pixels];
-            updatedPixels[row][col] = currentColor;
-            setPixels(updatedPixels);
-        }
+      const updatedPixels = [...pixels];
+      if (isDrawing) {  
+          updatedPixels[row][col] = currentColor;
+      } else {
+        updatedPixels[row][col] = currentColor;
+      }
+      setPixels(updatedPixels);
     }
 
     const renderGrid = () => {
@@ -21,6 +23,7 @@ export default function DrawingCanvas(props) {
                 key={colIndex}
                 className="pixel"
                 style={{ backgroundColor: color }}
+                onMouseDown={() => handlePixelClick(rowIndex, colIndex)}
                 onMouseEnter={(e) => { 
                     if (isDrawing && e.buttons === 1) {
                         handlePixelClick(rowIndex, colIndex);
