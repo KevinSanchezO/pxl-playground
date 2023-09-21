@@ -8,6 +8,45 @@
   text-align: center;
 }
 
+button {
+  margin-top: 5px;
+}
+
+.drawing-space {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.left-side, .right-side {
+  margin: 0 20px; /* Adjust the gap between the left and right components */
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons-tools {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.buttons-sizes {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons-sizes button{
+  margin-right: 10px;
+}
+
 .pixel {
   width: 20px; /* Adjust the size of the pixels as needed */
   height: 20px; /* Adjust the size of the pixels as needed */

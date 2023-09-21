@@ -3,11 +3,13 @@ import { faPencil,
     faEraser, 
     faDroplet, 
     faDeleteLeft,
-    faEyeDropper,
-    faFloppyDisk} from '@fortawesome/free-solid-svg-icons'
+    faEyeDropper} from '@fortawesome/free-solid-svg-icons'
 
 export default function ButtonsTools(props) {
-    const {handleDrawToggle, handleEraseToggle, handleDropToggle, isDrawing} = props
+    const {handleDrawToggle, 
+        handleEraseToggle, 
+        handleDropToggle, 
+        isDrawing} = props
 
     return (
         <div className="buttons-tools">
@@ -34,11 +36,6 @@ export default function ButtonsTools(props) {
             }}>
                 <FontAwesomeIcon icon={faEyeDropper}/> Eyedropper
             </button>
-            
-            <div className='config-buttons'>
-                
-                <button><FontAwesomeIcon icon={faFloppyDisk} /> Save</button>
-            </div>
         </div>
     )
 }
