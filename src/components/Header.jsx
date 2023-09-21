@@ -5,7 +5,7 @@ export default function Header() {
     return (
         <div className="header">
             <div className="title">
-                <h1>PIXEL PLAYGROUND</h1>
+                <h1>PXL PLAYGROUND</h1>
 
                 <a className='header-github' href='https://github.com/KevinSanchezO/pxl-playground' target="_blank">
                     <p><FontAwesomeIcon icon={faGithub}/> Made by Kevin Sánchez</p>
